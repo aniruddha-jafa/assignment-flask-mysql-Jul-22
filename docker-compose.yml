@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+    # flask requires SIGINT to stop gracefully
+    stop_signal: SIGINT
+    ports:
+      - 7070:5000
+    volumes:
+      - ./:/app
